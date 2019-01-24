@@ -1,0 +1,180 @@
+Task 1 : N-gram models without smoothing
+
+
+Top ten unigrams:
+[('the', 56448), ('of', 31276), ('and', 22092), ('to', 20341), ('a', 17780), ('in', 17705), ('is', 9474), ('that', 8240), ('for', 7788), ('it', 6051)]
+
+Top ten bigrams:
+[[('of', 'the'), 8508], [('in', 'the'), 4985], [('to', 'the'), 2819], [('and', 'the'), 1848], [('on', 'the'), 1821], [('for', 'the'), 1591], [('it', 'is'), 1390], [('to', 'be'), 1373], [('with', 'the'), 1261], [('that', 'the'), 1243]]
+
+Top ten trigrams:
+[[('one', 'of', 'the'), 337], [('the', 'united', 'states'), 336], [('as', 'well', 'as'), 225], [('some', 'of', 'the'), 156], [('the', 'fact', 'that'), 154], [('part', 'of', 'the'), 131], [('of', 'the', 'united'), 127], [('it', 'is', 'not'), 126], [('a', 'number', 'of'), 118], [('there', 'is', 'a'), 118]]
+
+Unigram test probabilities
+Sequence: he lived a good life | Unigram prob: 6.3158e-15| Log-likelihood: -32.6957 | Perplexity: 691.6946
+Sequence: the man was happy    | Unigram prob: 3.8385e-11| Log-likelihood: -23.9834 | Perplexity: 401.7538
+Sequence: the person was good  | Unigram prob: 7.5104e-11| Log-likelihood: -23.3121 | Perplexity: 339.6910
+Sequence: the girl was sad     | Unigram prob: 1.5061e-12| Log-likelihood: -27.2215 | Perplexity: 902.6840
+Sequence: he won the war       | Unigram prob: 2.0099e-11| Log-likelihood: -24.6304 | Perplexity: 472.2890
+
+Bigram test probabilities
+Sequence: he lived a good life | Bigram prob: 2.4055e-12| Log-likelihood: -26.7533 | Perplexity: 210.7458
+Sequence: the man was happy    | Bigram prob: 2.9231e-10| Log-likelihood: -21.9532 | Perplexity: 241.8471
+Sequence: the person was good  | Bigram prob: 1.7298e-11| Log-likelihood: -24.7804 | Perplexity: 490.3409
+Sequence: the girl was sad     | Bigram prob: 0.0000e+00| Log-likelihood: -inf | Perplexity: inf
+Sequence: he won the war       | Bigram prob: 8.3834e-10| Log-likelihood: -20.8996 | Perplexity: 185.8424
+
+Trigram test probabilities
+Sequence: he lived a good life | Trigram prob: 0.0000e+00| Log-likelihood: -inf | Perplexity: inf
+Sequence: the man was happy    | Trigram prob: 0.0000e+00| Log-likelihood: -inf | Perplexity: inf
+Sequence: the person was good  | Trigram prob: 0.0000e+00| Log-likelihood: -inf | Perplexity: inf
+Sequence: the girl was sad     | Trigram prob: 0.0000e+00| Log-likelihood: -inf | Perplexity: inf
+Sequence: he won the war       | Trigram prob: 1.3720e-07| Log-likelihood: -15.8018 | Perplexity: 51.9589
+###########################################
+Task 2 : Laplacian Smoothing
+
+k = 0.0001 | Unigram model:
+Sequence: he lived a good life | Unigram prob: 6.3156e-15| Log-likelihood: -32.6957 | Perplexity: 691.6980
+Sequence: the man was happy    | Unigram prob: 3.8384e-11| Log-likelihood: -23.9834 | Perplexity: 401.7557
+Sequence: the person was good  | Unigram prob: 7.5103e-11| Log-likelihood: -23.3122 | Perplexity: 339.6927
+Sequence: the girl was sad     | Unigram prob: 1.5061e-12| Log-likelihood: -27.2215 | Perplexity: 902.6871
+Sequence: he won the war       | Unigram prob: 2.0098e-11| Log-likelihood: -24.6304 | Perplexity: 472.2912
+
+k = 0.0001 | Bigram model:
+Sequence: he lived a good life | Bigram prob: 2.2158e-12| Log-likelihood: -26.8354 | Perplexity: 214.2376
+Sequence: the man was happy    | Bigram prob: 2.7091e-10| Log-likelihood: -22.0292 | Perplexity: 246.4868
+Sequence: the person was good  | Bigram prob: 1.6667e-11| Log-likelihood: -24.8176 | Perplexity: 494.9173
+Sequence: the girl was sad     | Bigram prob: 1.0018e-15| Log-likelihood: -34.5369 | Perplexity: 5620.8436
+Sequence: he won the war       | Bigram prob: 7.7861e-10| Log-likelihood: -20.9735 | Perplexity: 189.3086
+
+k = 0.0001 | Trigram model:
+Sequence: he lived a good life | Trigram prob: 1.6071e-21| Log-likelihood: -47.8799 | Perplexity: 14414.2554
+Sequence: the man was happy    | Trigram prob: 9.6398e-16| Log-likelihood: -34.5755 | Perplexity: 5675.2248
+Sequence: the person was good  | Trigram prob: 7.0580e-16| Log-likelihood: -34.8872 | Perplexity: 6135.2105
+Sequence: the girl was sad     | Trigram prob: 2.1327e-16| Log-likelihood: -36.0840 | Perplexity: 8275.0079
+Sequence: he won the war       | Trigram prob: 3.1790e-08| Log-likelihood: -17.2641 | Perplexity: 74.8905
+
+k = 0.001 | Unigram model:
+Sequence: he lived a good life | Unigram prob: 6.3143e-15| Log-likelihood: -32.6960 | Perplexity: 691.7278
+Sequence: the man was happy    | Unigram prob: 3.8378e-11| Log-likelihood: -23.9835 | Perplexity: 401.7728
+Sequence: the person was good  | Unigram prob: 7.5089e-11| Log-likelihood: -23.3123 | Perplexity: 339.7079
+Sequence: the girl was sad     | Unigram prob: 1.5059e-12| Log-likelihood: -27.2216 | Perplexity: 902.7154
+Sequence: he won the war       | Unigram prob: 2.0095e-11| Log-likelihood: -24.6306 | Perplexity: 472.3114
+
+k = 0.001 | Bigram model:
+Sequence: he lived a good life | Bigram prob: 1.2279e-12| Log-likelihood: -27.4257 | Perplexity: 241.0845
+Sequence: the man was happy    | Bigram prob: 1.5961e-10| Log-likelihood: -22.5583 | Perplexity: 281.3438
+Sequence: the person was good  | Bigram prob: 1.2361e-11| Log-likelihood: -25.1164 | Perplexity: 533.3149
+Sequence: the girl was sad     | Bigram prob: 2.6661e-15| Log-likelihood: -33.5582 | Perplexity: 4400.7906
+Sequence: he won the war       | Bigram prob: 4.5764e-10| Log-likelihood: -21.5049 | Perplexity: 216.2064
+
+k = 0.001 | Trigram model:
+Sequence: he lived a good life | Trigram prob: 3.2034e-21| Log-likelihood: -47.1901 | Perplexity: 12556.7417
+Sequence: the man was happy    | Trigram prob: 8.7357e-16| Log-likelihood: -34.6739 | Perplexity: 5816.6911
+Sequence: the person was good  | Trigram prob: 3.3668e-16| Log-likelihood: -35.6274 | Perplexity: 7382.3749
+Sequence: the girl was sad     | Trigram prob: 1.3168e-17| Log-likelihood: -38.8688 | Perplexity: 16600.5283
+Sequence: he won the war       | Trigram prob: 7.0804e-10| Log-likelihood: -21.0685 | Perplexity: 193.8590
+
+k = 0.01 | Unigram model:
+Sequence: he lived a good life | Unigram prob: 6.3007e-15| Log-likelihood: -32.6981 | Perplexity: 692.0265
+Sequence: the man was happy    | Unigram prob: 3.8312e-11| Log-likelihood: -23.9853 | Perplexity: 401.9439
+Sequence: the person was good  | Unigram prob: 7.4955e-11| Log-likelihood: -23.3141 | Perplexity: 339.8603
+Sequence: the girl was sad     | Unigram prob: 1.5040e-12| Log-likelihood: -27.2229 | Perplexity: 902.9979
+Sequence: he won the war       | Unigram prob: 2.0061e-11| Log-likelihood: -24.6323 | Perplexity: 472.5132
+
+k = 0.01 | Bigram model:
+Sequence: he lived a good life | Bigram prob: 9.6202e-14| Log-likelihood: -29.9723 | Perplexity: 401.2022
+Sequence: the man was happy    | Bigram prob: 2.1227e-11| Log-likelihood: -24.5757 | Perplexity: 465.8820
+Sequence: the person was good  | Bigram prob: 2.4002e-12| Log-likelihood: -26.7555 | Perplexity: 803.4103
+Sequence: the girl was sad     | Bigram prob: 9.2383e-16| Log-likelihood: -34.6180 | Perplexity: 5735.9067
+Sequence: he won the war       | Bigram prob: 5.1362e-11| Log-likelihood: -23.6921 | Perplexity: 373.5424
+
+k = 0.01 | Trigram model:
+Sequence: he lived a good life | Trigram prob: 3.3834e-22| Log-likelihood: -49.4380 | Perplexity: 19684.7031
+Sequence: the man was happy    | Trigram prob: 3.5291e-17| Log-likelihood: -37.8829 | Perplexity: 12974.3134
+Sequence: the person was good  | Trigram prob: 9.1142e-18| Log-likelihood: -39.2367 | Perplexity: 18199.9787
+Sequence: the girl was sad     | Trigram prob: 1.7250e-19| Log-likelihood: -43.2039 | Perplexity: 49068.5775
+Sequence: he won the war       | Trigram prob: 4.7607e-13| Log-likelihood: -28.3732 | Perplexity: 1203.8801
+
+k = 0.1 | Unigram model:
+Sequence: he lived a good life | Unigram prob: 6.1665e-15| Log-likelihood: -32.7196 | Perplexity: 695.0122
+Sequence: the man was happy    | Unigram prob: 3.7667e-11| Log-likelihood: -24.0022 | Perplexity: 403.6540
+Sequence: the person was good  | Unigram prob: 7.3626e-11| Log-likelihood: -23.3320 | Perplexity: 341.3836
+Sequence: the girl was sad     | Unigram prob: 1.4854e-12| Log-likelihood: -27.2354 | Perplexity: 905.8211
+Sequence: he won the war       | Unigram prob: 1.9722e-11| Log-likelihood: -24.6493 | Perplexity: 474.5301
+
+k = 0.1 | Bigram model:
+Sequence: he lived a good life | Bigram prob: 2.7254e-16| Log-likelihood: -35.8388 | Perplexity: 1296.9270
+Sequence: the man was happy    | Bigram prob: 3.2737e-13| Log-likelihood: -28.7477 | Perplexity: 1322.0263
+Sequence: the person was good  | Bigram prob: 4.1143e-14| Log-likelihood: -30.8217 | Perplexity: 2220.3753
+Sequence: the girl was sad     | Bigram prob: 6.9731e-17| Log-likelihood: -37.2019 | Perplexity: 10943.1898
+Sequence: he won the war       | Bigram prob: 5.8120e-13| Log-likelihood: -28.1737 | Perplexity: 1145.2990
+
+k = 0.1 | Trigram model:
+Sequence: he lived a good life | Trigram prob: 2.0006e-24| Log-likelihood: -54.5686 | Perplexity: 54924.9912
+Sequence: the man was happy    | Trigram prob: 2.6840e-19| Log-likelihood: -42.7618 | Perplexity: 43934.2626
+Sequence: the person was good  | Trigram prob: 6.7995e-20| Log-likelihood: -44.1348 | Perplexity: 61927.0241
+Sequence: the girl was sad     | Trigram prob: 1.2789e-21| Log-likelihood: -48.1083 | Perplexity: 167222.3775
+Sequence: he won the war       | Trigram prob: 2.6597e-17| Log-likelihood: -38.1657 | Perplexity: 13924.9030
+
+k = 1 | Unigram model:
+Sequence: he lived a good life | Unigram prob: 5.0007e-15| Log-likelihood: -32.9292 | Perplexity: 724.7601
+Sequence: the man was happy    | Unigram prob: 3.1928e-11| Log-likelihood: -24.1675 | Perplexity: 420.6836
+Sequence: the person was good  | Unigram prob: 6.1852e-11| Log-likelihood: -23.5063 | Perplexity: 356.5835
+Sequence: the girl was sad     | Unigram prob: 1.3151e-12| Log-likelihood: -27.3571 | Perplexity: 933.8085
+Sequence: he won the war       | Unigram prob: 1.6708e-11| Log-likelihood: -24.8151 | Perplexity: 494.6155
+
+k = 1 | Bigram model:
+Sequence: he lived a good life | Bigram prob: 5.5168e-20| Log-likelihood: -44.3439 | Perplexity: 7106.6170
+Sequence: the man was happy    | Bigram prob: 4.4092e-16| Log-likelihood: -35.3577 | Perplexity: 6900.9827
+Sequence: the person was good  | Bigram prob: 8.3363e-17| Log-likelihood: -37.0233 | Perplexity: 10465.4131
+Sequence: the girl was sad     | Bigram prob: 1.1503e-18| Log-likelihood: -41.3065 | Perplexity: 30535.1671
+Sequence: he won the war       | Bigram prob: 6.8020e-16| Log-likelihood: -34.9241 | Perplexity: 6192.1351
+
+k = 1 | Trigram model:
+Sequence: he lived a good life | Trigram prob: 3.5685e-27| Log-likelihood: -60.8976 | Perplexity: 194761.2584
+Sequence: the man was happy    | Trigram prob: 4.4886e-22| Log-likelihood: -49.1553 | Perplexity: 217256.6378
+Sequence: the person was good  | Trigram prob: 1.9195e-22| Log-likelihood: -50.0048 | Perplexity: 268659.8977
+Sequence: the girl was sad     | Trigram prob: 7.0311e-24| Log-likelihood: -53.3117 | Perplexity: 614107.6496
+Sequence: he won the war       | Trigram prob: 1.2759e-21| Log-likelihood: -48.1107 | Perplexity: 167319.9314
+###########################################
+Task 3 : Good Turing Smoothing
+
+Bigram model
+
+Sequence: he lived a good life | Bigram prob: 1.7663e-29| Log-likelihood: -66.2061 | Perplexity: 563103.8401
+Sequence: the man was happy    | Bigram prob: 9.3938e-24| Log-likelihood: -53.0220 | Perplexity: 571201.9698
+Sequence: the person was good  | Bigram prob: 4.6098e-25| Log-likelihood: -56.0364 | Perplexity: 1213608.5556
+Sequence: the girl was sad     | Bigram prob: 2.3347e-30| Log-likelihood: -68.2297 | Perplexity: 25582542.3511
+Sequence: he won the war       | Bigram prob: 3.9864e-23| Log-likelihood: -51.5766 | Perplexity: 397973.1487
+
+Trigram model
+
+Sequence: he lived a good life | Trigram prob: 1.3340e-62| Log-likelihood: -142.4721 | Perplexity: 2371220325067.7959
+Sequence: the man was happy    | Trigram prob: 8.1470e-45| Log-likelihood: -101.5187 | Perplexity: 105256972971.5752
+Sequence: the person was good  | Trigram prob: 5.0837e-46| Log-likelihood: -104.2929 | Perplexity: 210598246318.8127
+Sequence: the girl was sad     | Trigram prob: 3.5538e-49| Log-likelihood: -111.5587 | Perplexity: 1295170236372.6284
+Sequence: he won the war       | Trigram prob: 9.4714e-34| Log-likelihood: -76.0396 | Perplexity: 180258563.6955
+###########################################
+Task 4 : Interpolation Method
+
+Lambda : 0.2
+Sequence: he lived a good life | Bigram prob: 7.7184e-15| Log-likelihood: -32.4952 | Perplexity: 664.4992
+Sequence: the man was happy    | Bigram prob: 3.7718e-12| Log-likelihood: -26.3035 | Perplexity: 717.5681
+Sequence: the person was good  | Bigram prob: 1.4069e-12| Log-likelihood: -27.2896 | Perplexity: 918.1942
+Sequence: the girl was sad     | Bigram prob: 5.2682e-14| Log-likelihood: -30.5745 | Perplexity: 2087.2989
+Sequence: he won the war       | Bigram prob: 4.8836e-12| Log-likelihood: -26.0451 | Perplexity: 672.6898
+
+Lambda : 0.5
+Sequence: he lived a good life | Bigram prob: 1.7148e-13| Log-likelihood: -29.3943 | Perplexity: 357.4004
+Sequence: the man was happy    | Bigram prob: 3.4451e-11| Log-likelihood: -24.0915 | Perplexity: 412.7615
+Sequence: the person was good  | Bigram prob: 5.2730e-12| Log-likelihood: -25.9684 | Perplexity: 659.9108
+Sequence: the girl was sad     | Bigram prob: 1.7046e-13| Log-likelihood: -29.4003 | Perplexity: 1556.2939
+Sequence: he won the war       | Bigram prob: 6.8152e-11| Log-likelihood: -23.4093 | Perplexity: 348.0413
+
+Lambda : 0.8
+Sequence: he lived a good life | Bigram prob: 1.0108e-12| Log-likelihood: -27.6202 | Perplexity: 250.6477
+Sequence: the man was happy    | Bigram prob: 1.4029e-10| Log-likelihood: -22.6873 | Perplexity: 290.5653
+Sequence: the person was good  | Bigram prob: 1.1593e-11| Log-likelihood: -25.1807 | Perplexity: 541.9444
+Sequence: the girl was sad     | Bigram prob: 1.9469e-13| Log-likelihood: -29.2674 | Perplexity: 1505.4408
+Sequence: he won the war       | Bigram prob: 3.5732e-10| Log-likelihood: -21.7524 | Perplexity: 230.0041
